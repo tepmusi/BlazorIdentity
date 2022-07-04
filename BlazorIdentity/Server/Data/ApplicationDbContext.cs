@@ -1,4 +1,5 @@
 ﻿using BlazorIdentity.Server.Models;
+using BlazorIdentity.Shared;
 using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -13,5 +14,7 @@ namespace BlazorIdentity.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        public DbSet<SuperHero> SuperHeroes => Set<SuperHero>();
     }
 }
